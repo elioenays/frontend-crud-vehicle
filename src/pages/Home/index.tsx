@@ -18,11 +18,9 @@ export default function Home() {
   }
 
   useEffect(() => {
-    const getVehicles = async () => {
-      const { data } = await api.get('vehicle')
-      setData(data)
-    }
-    getVehicles()
+    api.get('vehicle').then(response => {
+      setData(response.data)
+    })
   }, [])
 
   return (
