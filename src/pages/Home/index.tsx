@@ -41,7 +41,12 @@ export default function Home() {
       </Stack>
       <Card>
         <CreateVehicle open={open} handleClose={handleClose} />
-        <DataGrid autoHeight columns={columns} rows={data} />
+        <DataGrid
+          loading={!data.length}
+          autoHeight
+          columns={columns}
+          rows={data}
+        />
       </Card>
     </Container>
   )
