@@ -15,6 +15,7 @@ export default function Home() {
   }
   const handleClose = () => {
     setOpen(false)
+    window.location.reload()
   }
 
   useEffect(() => {

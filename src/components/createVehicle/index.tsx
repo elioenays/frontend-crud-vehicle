@@ -15,6 +15,7 @@ import {
   TextField,
 } from '@mui/material'
 import React from 'react'
+import api from '../../api'
 
 interface Props {
   handleClose: () => void
@@ -26,11 +27,39 @@ export default function CreateVehicle(props: Props) {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const data = new FormData(event.currentTarget)
-    console.log({
-      type: data.get('type'),
-      license_plate: data.get('license_plate'),
-    })
+    const formData = new FormData(event.currentTarget)
+
+    const type = formData.get('type')
+    const license_plate = formData.get('license_plate')
+    const chassis = formData.get('chassis')
+    const renavam = formData.get('renavam')
+    const year = formData.get('year')
+    const category = formData.get('category')
+    const color = formData.get('color')
+    const steeringWheel = formData.get('steeringWheel')
+    const username = formData.get('username')
+    const motor = formData.get('motor')
+
+    api
+      .post('vehicle', {
+        type,
+        license_plate,
+        chassis,
+        renavam,
+        year,
+        category,
+        color,
+        steeringWheel,
+        username,
+        motor,
+      })
+      .then(response => {
+        handleClose()
+        console.log(response)
+      })
+      .catch(e => {
+        console.log(e)
+      })
   }
 
   return (
