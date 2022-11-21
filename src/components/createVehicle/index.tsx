@@ -91,7 +91,7 @@ export default function CreateVehicle(props: Props) {
           <Stack spacing={3}>
             <FormControl fullWidth>
               <InputLabel>Tipo de veiculo</InputLabel>
-              <Select name='type' label='Tipo de veiculo'>
+              <Select name='type' label='Tipo de veiculo' value={'car'}>
                 <MenuItem value='car'>Carro</MenuItem>
                 <MenuItem value='motorcycle'>Moto</MenuItem>
               </Select>
@@ -108,7 +108,7 @@ export default function CreateVehicle(props: Props) {
             />
             <FormControl fullWidth>
               <InputLabel>Categoria</InputLabel>
-              <Select name='category' label='Tipo de veiculo'>
+              <Select name='category' label='Categoria' value={'basic'}>
                 <MenuItem value='basic'>Básico</MenuItem>
                 <MenuItem value='intermediary'>Intermediário</MenuItem>
               </Select>
@@ -116,7 +116,7 @@ export default function CreateVehicle(props: Props) {
             <TextField label='Cor' name='color' required fullWidth />
             <FormControl fullWidth>
               <InputLabel>Direção</InputLabel>
-              <Select name='steeringWheel' label='Tipo de veiculo'>
+              <Select name='steeringWheel' label='Direção' value={'hydraulic'}>
                 <MenuItem value='hydraulic'>Hidraulica</MenuItem>
                 <MenuItem value='manual'>Manual</MenuItem>
               </Select>
