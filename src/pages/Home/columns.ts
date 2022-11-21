@@ -1,4 +1,5 @@
-import { GridColumns } from '@mui/x-data-grid'
+import { GridColumns, GridValueFormatterParams } from '@mui/x-data-grid'
+import { format } from 'date-fns'
 
 export const columns: GridColumns = [
   {
@@ -48,5 +49,9 @@ export const columns: GridColumns = [
   {
     field: 'created_at',
     headerName: 'Data Criação',
+    valueFormatter({ value }: GridValueFormatterParams<Date>) {
+      const date = format(new Date(value), 'dd/MM/yyyy')
+      return date
+    },
   },
 ]
