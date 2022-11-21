@@ -1,6 +1,7 @@
 import { Button, Card, Container, Stack, Typography } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import api from '../../api'
 import CreateVehicle from '../../components/createVehicle'
 import { columns } from './columns'
@@ -9,6 +10,8 @@ export default function Home() {
   const [data, setData] = useState([])
 
   const [open, setOpen] = useState(false)
+
+  const navigate = useNavigate()
 
   const handleOpen = () => {
     setOpen(true)
@@ -46,6 +49,9 @@ export default function Home() {
           autoHeight
           columns={columns}
           rows={data}
+          onRowClick={params => {
+            navigate('/vehicle/' + params.row.id)
+          }}
         />
       </Card>
     </Container>
