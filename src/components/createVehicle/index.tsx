@@ -30,7 +30,7 @@ export default function CreateVehicle(props: Props) {
     const formData = new FormData(event.currentTarget)
 
     const type = formData.get('type')
-    const license_plate = formData.get('license_plate')
+    const licensePlate = formData.get('license_plate')
     const chassis = formData.get('chassis')
     const renavam = formData.get('renavam')
     const year = formData.get('year')
@@ -43,7 +43,7 @@ export default function CreateVehicle(props: Props) {
     api
       .post('vehicle', {
         type,
-        license_plate,
+        licensePlate,
         chassis,
         renavam,
         year,
