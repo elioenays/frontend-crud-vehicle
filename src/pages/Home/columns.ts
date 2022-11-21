@@ -9,6 +9,14 @@ export const columns: GridColumns = [
   {
     field: 'type',
     headerName: 'Tipo de veiculo',
+    valueFormatter: ({ value }) => {
+      if (value === 'car') {
+        return 'Carro'
+      }
+      if (value === 'motorcycle') {
+        return 'Moto'
+      }
+    },
   },
   {
     field: 'license_plate',
@@ -29,6 +37,14 @@ export const columns: GridColumns = [
   {
     field: 'category',
     headerName: 'Categoria',
+    valueFormatter: ({ value }) => {
+      if (value === 'basic') {
+        return 'Básico'
+      }
+      if (value === 'intermediary') {
+        return 'Intermediário'
+      }
+    },
   },
   {
     field: 'color',
@@ -37,6 +53,14 @@ export const columns: GridColumns = [
   {
     field: 'steering_wheel',
     headerName: 'Direção',
+    valueFormatter: ({ value }) => {
+      if (value === 'hydraulic') {
+        return 'Hidráulica'
+      }
+      if (value === 'manual') {
+        return 'Manual'
+      }
+    },
   },
   {
     field: 'username',
