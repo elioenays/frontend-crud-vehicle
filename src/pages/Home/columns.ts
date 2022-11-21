@@ -5,6 +5,7 @@ export const columns: GridColumns = [
   {
     field: 'id',
     headerName: 'ID',
+    width: 10,
   },
   {
     field: 'type',
