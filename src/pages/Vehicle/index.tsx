@@ -34,7 +34,7 @@ export default function Vehicle() {
   return (
     <Container>
       <Box sx={{ mb: 3 }}>
-        <Typography variant='h4'>Vehículo</Typography>
+        <Typography variant='h4'>Veículo</Typography>
       </Box>
       <Box component='form'>
         <Stack spacing={3}>
