@@ -9,15 +9,16 @@ import { columns } from './columns'
 export default function Home() {
   const [data, setData] = useState([])
 
-  const [open, setOpen] = useState(false)
+  const [openCreateVehicle, setOpenCreateVehicle] = useState(false)
 
   const navigate = useNavigate()
 
-  const handleOpen = () => {
-    setOpen(true)
+  const handleOpenCreateVehicle = () => {
+    setOpenCreateVehicle(true)
   }
-  const handleClose = () => {
-    setOpen(false)
+
+  const handleCloseCreateVehicle = () => {
+    setOpenCreateVehicle(false)
     window.location.reload()
   }
 
@@ -37,20 +38,25 @@ export default function Home() {
       >
         <Typography variant='h4'>Veículos</Typography>
         <Typography>
-          <Button variant='contained' onClick={handleOpen}>
+          <Button variant='contained' onClick={handleOpenCreateVehicle}>
             Criar Veículo
           </Button>
         </Typography>
       </Stack>
       <Card>
-        <CreateVehicle open={open} handleClose={handleClose} />
+        <CreateVehicle
+          open={openCreateVehicle}
+          handleClose={handleCloseCreateVehicle}
+        />
         <DataGrid
           loading={!data.length}
           autoHeight
           columns={columns}
           rows={data}
           onRowClick={params => {
-            navigate('/vehicle/' + params.row.id)
+            navigate('/vehicle/' + params.row.id, {
+              state: { data: params.row },
+            })
           }}
         />
       </Card>

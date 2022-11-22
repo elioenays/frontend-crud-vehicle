@@ -60,6 +60,7 @@ export default function CreateVehicle(props: Props) {
       .catch(e => {
         console.log(e)
       })
+      .finally()
   }
 
   return (
