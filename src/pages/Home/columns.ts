@@ -12,10 +12,10 @@ export const columns: GridColumns = [
     headerName: 'Tipo de veiculo',
     valueFormatter: ({ value }) => {
       if (value === 'car') {
-        return 'Carro'
+        return '🚗'
       }
       if (value === 'motorcycle') {
-        return 'Moto'
+        return '🏍️'
       }
     },
   },
